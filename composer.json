@@ -1,5 +1,6 @@
 {
     "name": "madahost/imdb-api",
+    "type": "library",
     "description": "IMDB API that can fetch film data and search results",
     "keywords": ["imdb", "api", "film", "movie", "search"],
     "license": "Apache-2.0",
