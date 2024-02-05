@@ -1,11 +1,11 @@
 <?php
-namespace hmerritt;
+namespace madahost;
 
 /**
 *  Class Response
 *
 *
-* @package hmerritt/imdb-api
+* @package madahost/imdb-api
 * @author Harry Merritt
 */
 class Response
