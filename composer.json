@@ -13,7 +13,7 @@
     "type": "project",
     "require": {
 		"php": ">=7.1",
-        "paquettg/php-html-parser": "^2.1",
+        "madahost/php-html-parser": "^2.1",
         "tmarois/filebase": "^1.0",
         "predis/predis": "^2.2"
     },
