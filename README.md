@@ -5,7 +5,7 @@ PHP IMDB-API that can fetch film data and search results.
 Install the latest version using [composer](https://getcomposer.org/).
 
 ```
-$ composer require madahost/imdb-api
+$ composer require madahost/imdb-api:dev-main
 ```
 
 ## Usage
