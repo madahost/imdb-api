@@ -10,7 +10,6 @@
             "email": "madahost@gmail.com"
         }
     ],
-    "type": "project",
     "require": {
 		"php": ">=7.1",
         "madahost/php-html-parser": "dev-main",
