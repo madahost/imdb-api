@@ -12,7 +12,7 @@
     ],
     "require": {
 		"php": ">=7.1",
-        "madahost/php-html-parser": "dev-main",
+        "madahost/php-html-parser": "^3.1.2",
         "tmarois/filebase": "^1.0",
         "predis/predis": "^2.2"
     },
