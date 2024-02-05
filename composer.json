@@ -28,5 +28,6 @@
         "psr-4": {
             "madahost\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
