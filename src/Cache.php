@@ -10,7 +10,11 @@ namespace madahost;
 */
 class Cache
 {
-
+    private $type;
+    private $isRedis;
+    private $redis;
+    private $cache;
+    private $film;
     /**
      * Initiate cache
      *
