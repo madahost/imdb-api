@@ -286,6 +286,7 @@ class HtmlPieces
                     $episode["id"]          = $this->extractImdbId($hyperlink->getAttribute("href"));
                     $episode['title']       = $episodeRow->find('.ipc-title__text')->text;
                     $episode['title']       = trim(preg_replace('/S[0-9]+\.E[0-9]+\s+\∙/i', '', $episode['title']));
+                    $episode['release'] = $episodeRow->find(".lntLfO")->text;
                     $episode['description'] = $episodeRow->find(".ipc-html-content-inner-div")->text;
                     $rating                 = $episodeRow->find(".ipc-rating-star");
                     $episode["poster"]      = "";
