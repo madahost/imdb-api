@@ -278,17 +278,30 @@ class HtmlPieces
                 break;
 
             case "episodes":
+                $no = 0;
                 $episodes = [];
                 $findAllEpisodes = $dom->find($page, "article.episode-item-wrapper");
                 foreach ($findAllEpisodes as $episodeRow){
+                    $no++;
                     $episode = [];
                     $hyperlink = $episodeRow->find(".ipc-title-link-wrapper");
                     $episode["id"]          = $this->extractImdbId($hyperlink->getAttribute("href"));
-                    $episode['title']       = $episodeRow->find('.ipc-title__text')->text;
+                    $episode['title']       = $episodeRow->find('.ipc-title__text')->text();
                     $episode['title']       = trim(preg_replace('/S[0-9]+\.E[0-9]+\s+\∙/i', '', $episode['title']));
-                    $episode['release'] = $episodeRow->find(".lntLfO")->text;
-                    $episode['description'] = $episodeRow->find(".ipc-html-content-inner-div")->text;
-                    $rating                 = $episodeRow->find(".ipc-rating-star");
+                    $episode['no'] = $no;
+                    if(preg_match('~E(?<no>[0-9]+)~', $episode['title'], $match)) {
+                        $episode['no'] = trim($match['no']);
+                    }
+                    
+                    $episode['release'] = '';
+                    if(count(@$episodeRow->find(".fVspdm"))) {
+                        $episode['release']     = @$episodeRow->find(".fVspdm")->text();
+                    }
+                    $episode['description'] ='';
+                    if(count($episodeRow->find(".ipc-html-content-inner-div"))) {
+                        $episode['description'] = @$episodeRow->find(".ipc-html-content-inner-div")->text();
+                    }
+                    $rating = $episodeRow->find(".ipc-rating-star");
                     $episode["poster"]      = "";
                     if($this->count($rating)) {
                         $episode['rating'] = $rating->text;
